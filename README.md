@@ -1,6 +1,6 @@
 # 🎮 Sliding Puzzle Game
 
-Um jogo de quebra-cabeça deslizante interativo e desafiador, desenvolvido com Next.js 16, React 19 e TypeScript. O objetivo é reorganizar as peças do puzzle para corresponder ao modelo apresentado, com diferentes níveis de dificuldade e sistema de pontuação.
+Um jogo de quebra-cabeça deslizante interativo semelhante ao puzzle da dungeon Xerneas, desenvolvido com Next.js 16, React 19 e TypeScript. O objetivo é reorganizar as peças do puzzle para corresponder ao modelo apresentado, com diferentes níveis de dificuldade e sistema de pontuação.
 
 ![Next.js](https://img.shields.io/badge/Next.js-16.1.6-black?style=flat-square&logo=next.js)
 ![React](https://img.shields.io/badge/React-19.2.3-blue?style=flat-square&logo=react)
@@ -181,7 +181,7 @@ Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalh
 
 ## 👤 Autor
 
-Desenvolvido com ❤️ por [Seu Nome]
+Desenvolvido com ❤️ por Pedro Pk
 
 ## 🙏 Agradecimentos
 
