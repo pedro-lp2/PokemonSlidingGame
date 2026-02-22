@@ -21,9 +21,9 @@ import { RefreshIcon } from "@/components/PixelIcons";
 
 export default function PokemonPuzzle() {
   const { images, loaded } = useImages(9);
-  const [difficulty, setDifficulty] = useState<Difficulty>("easy");
+  const [difficulty, setDifficulty] = useState<Difficulty>("normal");
   const { stats, streak, addWin, onLoss, resetStreak } = useWinCounter();
-  const { muted, toggleMute, playSwap } = useSound();
+  const { muted, toggleMute, playSwap, playWin } = useSound();
   const timer = useTimer();
   const [showConfetti, setShowConfetti] = useState(false);
   const prevStatusRef = useRef<string>("playing");
@@ -75,6 +75,7 @@ export default function PokemonPuzzle() {
     if (prevStatusRef.current === "playing" && status === "won") {
       timer.stop();
       addWin(difficulty, timer.elapsed);
+      playWin();
       setShowConfetti(true);
       const t = setTimeout(() => setShowConfetti(false), 4000);
       return () => clearTimeout(t);
@@ -85,7 +86,7 @@ export default function PokemonPuzzle() {
     }
     prevStatusRef.current = status;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [status, difficulty, addWin, onLoss, timer.stop]);
+  }, [status, difficulty, addWin, onLoss, timer.stop, playWin]);
 
   // Tenta mudar dificuldade (com modal se tiver streak)
   const handleDifficultyChange = useCallback(

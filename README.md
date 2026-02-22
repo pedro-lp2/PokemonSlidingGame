@@ -1,20 +1,29 @@
-# 🎮 Sliding Puzzle Game
+# 🎮 OtPokemon Dungeon Puzzle Trainer
 
-Um jogo de quebra-cabeça deslizante interativo e desafiador, desenvolvido com Next.js 16, React 19 e TypeScript. O objetivo é reorganizar as peças do puzzle para corresponder ao modelo apresentado, com diferentes níveis de dificuldade e sistema de pontuação.
+Simulador do puzzle de dungeon do jogo OtPokemon. Este projeto permite que os jogadores pratiquem e aprimorem suas estratégias para completar o puzzle com o menor número de movimentos possível antes de enfrentar o desafio real no jogo.
 
 ![Next.js](https://img.shields.io/badge/Next.js-16.1.6-black?style=flat-square&logo=next.js)
 ![React](https://img.shields.io/badge/React-19.2.3-blue?style=flat-square&logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue?style=flat-square&logo=typescript)
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4.x-38B2AC?style=flat-square&logo=tailwind-css)
 
+## 🎯 Sobre o Projeto
+
+Este é um puzzle deslizante que faz parte de uma dungeon do jogo **OtPokemon**. O objetivo deste projeto é fornecer aos jogadores uma plataforma para:
+
+- ✅ Testar e entender a mecânica do puzzle antes de jogar
+- 🧠 Desenvolver estratégias para completar com menos movimentos
+- 🏃 Praticar para melhorar o tempo de conclusão
+- 📈 Acompanhar seu progresso e estatísticas
+
 ## ✨ Características
 
-- 🎯 **3 Níveis de Dificuldade**: Easy (16 movimentos), Medium (10 movimentos) e Hard (6 movimentos)
+- 🎯 **2 Modos de Dificuldade**: Normal (16 movimentos) e Difícil (14 movimentos)
 - ⏱️ **Sistema de Timer**: Cronômetro que inicia no primeiro movimento
 - 🏆 **Sistema de Streak**: Acompanhe suas vitórias consecutivas
 - 📊 **Estatísticas Persistentes**: Melhor tempo e total de vitórias por dificuldade
-- 🎨 **9 Imagens de Puzzle**: Variedade de imagens para resolver
-- 🔊 **Efeitos Sonoros**: Som de troca de peças com opção de mute
+- 🎨 **Puzzle 3x3**: Uma imagem dividida em 9 peças para reorganizar
+- 🔊 **Efeitos Sonoros**: Som de troca de peças e som de vitória com opção de mute
 - 🎊 **Animações**: Confetes na vitória e animações suaves de troca
 - 📱 **Responsivo**: Interface adaptável para desktop e mobile
 - 💾 **LocalStorage**: Progresso e configurações salvos localmente
@@ -66,7 +75,7 @@ npm start        # Inicia o servidor de produção
 
 ## 🎮 Como Jogar
 
-1. **Selecione a Dificuldade**: Escolha entre Easy, Medium ou Hard
+1. **Selecione a Dificuldade**: Escolha entre Normal (16 movimentos) ou Difícil (14 movimentos)
 2. **Observe o Modelo**: O grid da esquerda mostra como o puzzle deve ficar
 3. **Reorganize as Peças**: Arraste e solte as peças adjacentes no grid da direita
 4. **Complete o Puzzle**: Organize todas as peças antes de acabarem os movimentos
@@ -85,8 +94,9 @@ npm start        # Inicia o servidor de produção
 ```
 slindingame/
 ├── public/
-│   ├── puzzle1.png - puzzle9.png    # Imagens do puzzle
-│   └── slidingGame-slideRock.mp3    # Som de troca
+│   ├── puzzle1.png - puzzle9.png    # 9 peças que compõem o puzzle
+│   ├── slidingGame-slideRock.mp3    # Som de troca de peças
+│   └── WinSound.wav                 # Som de vitória
 ├── src/
 │   ├── app/
 │   │   ├── globals.css              # Estilos globais
@@ -116,10 +126,10 @@ slindingame/
 
 ## 🎨 Customização
 
-### Adicionar Novas Imagens
+### Substituir Imagem do Puzzle
 
-1. Adicione imagens na pasta `public/` com o padrão `puzzleN.png`
-2. Atualize o hook `useImages` com o novo número de imagens
+1. Divida sua imagem em 9 peças (3x3)
+2. Substitua os arquivos `puzzle1.png` até `puzzle9.png` na pasta `public/`
 
 ### Ajustar Dificuldade
 
@@ -127,9 +137,8 @@ Edite o objeto `DIFFICULTY_MOVES` em `src/hooks/useGameLogic.ts`:
 
 ```typescript
 export const DIFFICULTY_MOVES: Record<Difficulty, number> = {
-  easy: 16,    // Número de movimentos permitidos
-  medium: 10,
-  hard: 6,
+  normal: 16,  // Número de movimentos permitidos
+  hard: 14,
 };
 ```
 
@@ -181,13 +190,13 @@ Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalh
 
 ## 👤 Autor
 
-Desenvolvido com ❤️ por [Seu Nome]
+Desenvolvido para a comunidade OtPokemon
 
 ## 🙏 Agradecimentos
 
-- Imagens de puzzle utilizadas no projeto
+- Comunidade OtPokemon
 - Comunidade Next.js e React
-- Todos os contribuidores
+- Todos os jogadores e contribuidores
 
 ---
 

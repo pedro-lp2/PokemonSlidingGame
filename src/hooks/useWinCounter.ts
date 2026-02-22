@@ -11,14 +11,12 @@ interface DifficultyStats {
 }
 
 export interface AllStats {
-  easy: DifficultyStats;
-  medium: DifficultyStats;
+  normal: DifficultyStats;
   hard: DifficultyStats;
 }
 
 const DEFAULT_STATS: AllStats = {
-  easy: { wins: 0, bestTime: null },
-  medium: { wins: 0, bestTime: null },
+  normal: { wins: 0, bestTime: null },
   hard: { wins: 0, bestTime: null },
 };
 
@@ -27,16 +25,6 @@ function loadStats(): AllStats {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) {
-      // Migrate from old format
-      const oldRaw = localStorage.getItem("pokemon-puzzle-wins");
-      if (oldRaw) {
-        const old = JSON.parse(oldRaw);
-        return {
-          easy: { wins: old.easy ?? 0, bestTime: null },
-          medium: { wins: old.medium ?? 0, bestTime: null },
-          hard: { wins: old.hard ?? 0, bestTime: null },
-        };
-      }
       return DEFAULT_STATS;
     }
     const parsed = JSON.parse(raw);
@@ -45,7 +33,7 @@ function loadStats(): AllStats {
       bestTime:
         typeof parsed[d]?.bestTime === "number" ? parsed[d].bestTime : null,
     });
-    return { easy: read("easy"), medium: read("medium"), hard: read("hard") };
+    return { normal: read("normal"), hard: read("hard") };
   } catch {
     return DEFAULT_STATS;
   }

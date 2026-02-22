@@ -6,13 +6,12 @@ const GRID_SIZE = 3;
 const TOTAL_TILES = GRID_SIZE * GRID_SIZE;
 const SWAP_DURATION = 1000;
 
-export type Difficulty = "easy" | "medium" | "hard";
+export type Difficulty = "normal" | "hard";
 export type GameStatus = "playing" | "won" | "lost";
 
 export const DIFFICULTY_MOVES: Record<Difficulty, number> = {
-  easy: 16,
-  medium: 10,
-  hard: 6,
+  normal: 16,
+  hard: 14,
 };
 
 export interface SwapAnim {

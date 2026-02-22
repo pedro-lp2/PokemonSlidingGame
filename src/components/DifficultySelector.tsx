@@ -12,22 +12,16 @@ interface DifficultySelectorProps {
 }
 
 const LABELS: Record<Difficulty, string> = {
-  easy: "FÁCIL",
-  medium: "MÉDIO",
+  normal: "NORMAL",
   hard: "DIFÍCIL",
 };
 
 const COLORS: Record<Difficulty, { bg: string; border: string; glow: string }> =
   {
-    easy: {
+    normal: {
       bg: "from-[#16a34a] to-[#15803d]",
       border: "border-[#4ade80]",
       glow: "rgba(34,197,94,0.3)",
-    },
-    medium: {
-      bg: "from-[#d97706] to-[#b45309]",
-      border: "border-[#fbbf24]",
-      glow: "rgba(234,179,8,0.3)",
     },
     hard: {
       bg: "from-[#dc2626] to-[#b91c1c]",
@@ -36,7 +30,7 @@ const COLORS: Record<Difficulty, { bg: string; border: string; glow: string }> =
     },
   };
 
-const difficulties: Difficulty[] = ["easy", "medium", "hard"];
+const difficulties: Difficulty[] = ["normal", "hard"];
 
 export default function DifficultySelector({
   current,
