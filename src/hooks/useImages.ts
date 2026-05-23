@@ -6,7 +6,7 @@ export function useImages(count: number) {
   const [loaded, setLoaded] = useState(false);
 
   const images = useMemo(
-    () => Array.from({ length: count }, (_, i) => `/puzzle${i + 1}.png`),
+    () => Array.from({ length: count }, (_, i) => `/modelo${i + 1}.png`),
     [count],
   );
 

@@ -15,6 +15,7 @@ import StatusMessage from "@/components/StatusMessage";
 import ResetButton from "@/components/ResetButton";
 import Confetti from "@/components/Confetti";
 import MuteButton from "@/components/MuteButton";
+import VolumeControl from "@/components/VolumeControl";
 import StatsBar from "@/components/StatsBar";
 import ConfirmModal from "@/components/ConfirmModal";
 import { RefreshIcon } from "@/components/PixelIcons";
@@ -23,7 +24,7 @@ export default function PokemonPuzzle() {
   const { images, loaded } = useImages(9);
   const [difficulty, setDifficulty] = useState<Difficulty>("normal");
   const { stats, streak, addWin, onLoss, resetStreak } = useWinCounter();
-  const { muted, toggleMute, playSwap, playWin } = useSound();
+  const { muted, volume, toggleMute, changeVolume, playSwap, playWin } = useSound();
   const timer = useTimer();
   const [showConfetti, setShowConfetti] = useState(false);
   const prevStatusRef = useRef<string>("playing");
@@ -157,7 +158,13 @@ export default function PokemonPuzzle() {
   return (
     <div className="min-h-screen bg-[#141827] flex flex-col items-center justify-center px-4 py-8 sm:py-10 pixel-font">
       <Confetti active={showConfetti} />
-      <MuteButton muted={muted} onToggle={toggleMute} />
+      <VolumeControl
+        volume={volume}
+        muted={muted}
+        onVolumeChange={changeVolume}
+        onToggleMute={toggleMute}
+        onUnmute={playWin}
+      />
       <ConfirmModal
         open={pendingDifficulty !== null}
         streak={streak}
