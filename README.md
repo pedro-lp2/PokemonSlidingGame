@@ -190,7 +190,7 @@ Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalh
 
 ## 👤 Autor
 
-Desenvolvido com ❤️ por [Seu Nome]
+Desenvolvido com ❤️ por [Tutor] Pedro Pk
 
 ## 🙏 Agradecimentos
 
